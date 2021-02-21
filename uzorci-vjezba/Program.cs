@@ -52,6 +52,22 @@ namespace uzorci_vjezba
                 Console.WriteLine("#########################Strategy done#########################");
             }
 
+            if (true)
+            {
+                Console.WriteLine("#########################Testing Factory method#########################");
+
+                AbstractCreator creator1 = new TenSpammerCreator();
+                AbstractCreator creator2 = new TwentySpammerCreator();
+
+                ISpammer spammer1 = creator1.CreateSpammer();
+                ISpammer spammer2 = creator2.CreateSpammer();
+
+                Console.WriteLine(spammer1.SpamMessage("A message, ten times"));
+                Console.WriteLine(spammer2.SpamMessage("A message, twenty times"));
+
+                Console.WriteLine("#########################Factory method done#########################");
+            }
+
             Console.ReadKey();
 
         }
