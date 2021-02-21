@@ -25,7 +25,32 @@ namespace uzorci_vjezba
 
                 Console.WriteLine("#########################Template method done#########################");
             }
-            
+            if (false)//Testing Strategy
+            {
+                Console.WriteLine("#########################Testing Strategy#########################");
+
+                //This main program is the client
+
+                StrategyContext strategyContext = new StrategyContext(2.5, 3.5);
+                try
+                {
+                    strategyContext.executeOperation();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                strategyContext.setStrategy(new AdditionStrategy());
+                Console.WriteLine(strategyContext.executeOperation());
+
+                strategyContext.setStrategy(new MultiplicationStrategy());
+                Console.WriteLine(strategyContext.executeOperation());
+
+                strategyContext.setStrategy(new SubtractionStrategy());
+                Console.WriteLine(strategyContext.executeOperation());
+
+                Console.WriteLine("#########################Strategy done#########################");
+            }
 
             Console.ReadKey();
 
