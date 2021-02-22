@@ -3,6 +3,7 @@ using uzorci_vjezba.AbstractFactory;
 using uzorci_vjezba.AbstractFactory.Hyundai;
 using uzorci_vjezba.AbstractFactory.ICars;
 using uzorci_vjezba.AbstractFactory.Nissan;
+using uzorci_vjezba.Command;
 using uzorci_vjezba.FactoryMethod.Abstractions;
 using uzorci_vjezba.FactoryMethod.Creators;
 using uzorci_vjezba.Strategy;
@@ -71,7 +72,7 @@ namespace uzorci_vjezba
 
                 Console.WriteLine("#########################Factory method done#########################");
             }
-            if (true)//Testing Abstract factory
+            if (false)//Testing Abstract factory
             {
                 Console.WriteLine("#########################Testing Abstract factory#########################");
 
@@ -94,6 +95,50 @@ namespace uzorci_vjezba
                 Console.WriteLine(sportsCar.doSomethingElse());
                 
                 Console.WriteLine("#########################Abstract factory done#########################");
+            }
+            if (true)//Testing Command
+            {
+                Console.WriteLine("#########################Testing Command#########################");
+
+                Receiver r = new Receiver();
+                ICommand incrementCommand = new IncrementCommand(r);
+                ICommand decrementCommand = new DecrementCommand(r);
+
+                Invoker invoker = new Invoker();
+                invoker.setIncrementCommand(incrementCommand);
+                invoker.setDecrementCommand(decrementCommand);
+
+                Console.WriteLine(r.getValue());
+
+                invoker.addRequest();
+                invoker.addRequest();
+                invoker.addRequest();
+                invoker.addRequest();
+                Console.WriteLine(r.getValue());
+
+                invoker.removeRequest();
+                invoker.removeRequest();
+                Console.WriteLine(r.getValue());
+
+                invoker.undoAll();
+                Console.WriteLine(r.getValue());
+
+                invoker.addRequest();
+                invoker.addRequest();
+                invoker.addRequest();
+                invoker.removeRequest();
+                invoker.addRequest();
+                invoker.addRequest();
+                invoker.addRequest();
+                invoker.addRequest();
+                invoker.removeRequest();
+                Console.WriteLine(r.getValue());
+
+                invoker.commit();
+                invoker.undoAll();
+                Console.WriteLine(r.getValue());
+
+                Console.WriteLine("#########################Command done#########################");
             }
 
             Console.ReadKey();

@@ -52,6 +52,11 @@
     <Compile Include="AbstractFactory\Nissan\NissanFactory.cs" />
     <Compile Include="AbstractFactory\Nissan\NissanSedan.cs" />
     <Compile Include="AbstractFactory\Nissan\NissanSportsCar.cs" />
+    <Compile Include="Command\DecrementCommand.cs" />
+    <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\Invoker.cs" />
+    <Compile Include="Command\IncrementCommand.cs" />
+    <Compile Include="Command\Receiver.cs" />
     <Compile Include="FactoryMethod\Abstractions\AbstractCreator.cs" />
     <Compile Include="FactoryMethod\Abstractions\ISpammer.cs" />
     <Compile Include="FactoryMethod\Creators\TenSpammerCreator.cs" />
