@@ -1,4 +1,8 @@
 ﻿using System;
+using uzorci_vjezba.AbstractFactory;
+using uzorci_vjezba.AbstractFactory.Hyundai;
+using uzorci_vjezba.AbstractFactory.ICars;
+using uzorci_vjezba.AbstractFactory.Nissan;
 using uzorci_vjezba.FactoryMethod.Abstractions;
 using uzorci_vjezba.FactoryMethod.Creators;
 using uzorci_vjezba.Strategy;
@@ -52,7 +56,7 @@ namespace uzorci_vjezba
                 Console.WriteLine("#########################Strategy done#########################");
             }
 
-            if (true)
+            if (false)//Testing Factory method
             {
                 Console.WriteLine("#########################Testing Factory method#########################");
 
@@ -66,6 +70,30 @@ namespace uzorci_vjezba
                 Console.WriteLine(spammer2.SpamMessage("A message, twenty times"));
 
                 Console.WriteLine("#########################Factory method done#########################");
+            }
+            if (true)//Testing Abstract factory
+            {
+                Console.WriteLine("#########################Testing Abstract factory#########################");
+
+                CarFactory factory;
+                ISportsCar sportsCar;
+                ISedan sedan;
+
+                factory = new NissanFactory();
+                sportsCar = factory.createSportsCar();
+                sedan = factory.createSedan();
+
+                Console.WriteLine(sedan.doSomething());
+                Console.WriteLine(sportsCar.doSomethingElse());
+
+                factory = new HyundaiFactory();
+                sportsCar = factory.createSportsCar();
+                sedan = factory.createSedan();
+
+                Console.WriteLine(sedan.doSomething());
+                Console.WriteLine(sportsCar.doSomethingElse());
+                
+                Console.WriteLine("#########################Abstract factory done#########################");
             }
 
             Console.ReadKey();

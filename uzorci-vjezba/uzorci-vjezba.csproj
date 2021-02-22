@@ -43,6 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractFactory\CarFactory.cs" />
+    <Compile Include="AbstractFactory\Hyundai\HyundaiSedan.cs" />
+    <Compile Include="AbstractFactory\Hyundai\HyundaiSportsCar.cs" />
+    <Compile Include="AbstractFactory\ICars\ISedan.cs" />
+    <Compile Include="AbstractFactory\ICars\ISportsCar.cs" />
+    <Compile Include="AbstractFactory\Hyundai\HyundaiFactory.cs" />
+    <Compile Include="AbstractFactory\Nissan\NissanFactory.cs" />
+    <Compile Include="AbstractFactory\Nissan\NissanSedan.cs" />
+    <Compile Include="AbstractFactory\Nissan\NissanSportsCar.cs" />
     <Compile Include="FactoryMethod\Abstractions\AbstractCreator.cs" />
     <Compile Include="FactoryMethod\Abstractions\ISpammer.cs" />
     <Compile Include="FactoryMethod\Creators\TenSpammerCreator.cs" />
