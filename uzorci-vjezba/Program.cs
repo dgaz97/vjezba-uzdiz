@@ -4,6 +4,7 @@ using uzorci_vjezba.AbstractFactory.Hyundai;
 using uzorci_vjezba.AbstractFactory.ICars;
 using uzorci_vjezba.AbstractFactory.Nissan;
 using uzorci_vjezba.Command;
+using uzorci_vjezba.Facade;
 using uzorci_vjezba.FactoryMethod.Abstractions;
 using uzorci_vjezba.FactoryMethod.Creators;
 using uzorci_vjezba.Strategy;
@@ -96,7 +97,7 @@ namespace uzorci_vjezba
                 
                 Console.WriteLine("#########################Abstract factory done#########################");
             }
-            if (true)//Testing Command
+            if (false)//Testing Command
             {
                 Console.WriteLine("#########################Testing Command#########################");
 
@@ -139,6 +140,17 @@ namespace uzorci_vjezba
                 Console.WriteLine(r.getValue());
 
                 Console.WriteLine("#########################Command done#########################");
+            }
+            if (true)//Testing Facade
+            {
+                Console.WriteLine("#########################Testing Facade#########################");
+
+                ComponentsFacade f = new ComponentsFacade();
+                Console.WriteLine(f.executeFirstComponent());
+                Console.WriteLine(f.executeSecondComponent());
+                Console.WriteLine(f.executeThirdComponent());
+
+                Console.WriteLine("#########################Facade done#########################");
             }
 
             Console.ReadKey();

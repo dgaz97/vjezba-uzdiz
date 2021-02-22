@@ -57,6 +57,10 @@
     <Compile Include="Command\Invoker.cs" />
     <Compile Include="Command\IncrementCommand.cs" />
     <Compile Include="Command\Receiver.cs" />
+    <Compile Include="Facade\ComponentsFacade.cs" />
+    <Compile Include="Facade\FirstComponent.cs" />
+    <Compile Include="Facade\SecondComponent.cs" />
+    <Compile Include="Facade\ThirdComponent.cs" />
     <Compile Include="FactoryMethod\Abstractions\AbstractCreator.cs" />
     <Compile Include="FactoryMethod\Abstractions\ISpammer.cs" />
     <Compile Include="FactoryMethod\Creators\TenSpammerCreator.cs" />
